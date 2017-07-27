@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-joinds"
+          insertBefore="administration">
+        <item screen="joinds$Account.browse"/>
+        <item screen="joinds$PublisherSite.browse"/>
+        <item screen="join-screen"/>
+    </menu>
+</menu-config>

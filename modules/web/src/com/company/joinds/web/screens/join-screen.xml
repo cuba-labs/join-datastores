@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://caption"
+        class="com.company.joinds.web.screens.JoinScreen"
+        messagesPack="com.company.joinds.web.screens">
+    <dsContext>
+        <valueCollectionDatasource id="joinDs"
+                                   datasourceClass="com.company.joinds.web.screens.JoinDatasource">
+            <properties idProperty="countryCode">
+                <property datatype="string"
+                          name="siteName"/>
+                <property datatype="string"
+                          name="company"/>
+                <property datatype="string"
+                          name="countryCode"/>
+            </properties>
+        </valueCollectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout>
+        <dataGrid id="dataGrid"
+                  datasource="joinDs"
+                  height="100%"
+                  width="100%">
+            <columns>
+                <column caption="Site name (Publisher datastore)"
+                        property="siteName"/>
+                <column caption="Company (Account datastore)"
+                        property="company"/>
+                <column caption="Country code (Both datastores)"
+                        property="countryCode"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</window>

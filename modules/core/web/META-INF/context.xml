@@ -1,0 +1,34 @@
+<Context>
+    <!-- Database connection -->
+    <Resource driverClassName="org.hsqldb.jdbc.JDBCDriver"
+              maxIdle="2"
+              maxTotal="20"
+              maxWaitMillis="5000"
+              name="jdbc/CubaDS"
+              password=""
+              type="javax.sql.DataSource"
+              url="jdbc:hsqldb:hsql://localhost/joinds"
+              username="sa"/>
+    <!-- Switch off session serialization -->
+    <Manager pathname=""/>
+    <!--Data store 'account' connection-->
+    <Resource driverClassName="org.postgresql.Driver"
+              maxIdle="2"
+              maxTotal="20"
+              maxWaitMillis="5000"
+              name="jdbc/account"
+              password="postgres"
+              type="javax.sql.DataSource"
+              url="jdbc:postgresql://localhost:5433/account"
+              username="postgres"/>
+    <!--Data store 'publisher' connection-->
+    <Resource driverClassName="org.postgresql.Driver"
+              maxIdle="2"
+              maxTotal="20"
+              maxWaitMillis="5000"
+              name="jdbc/publisher"
+              password="postgres"
+              type="javax.sql.DataSource"
+              url="jdbc:postgresql://localhost:5433/publisher"
+              username="postgres"/>
+</Context>

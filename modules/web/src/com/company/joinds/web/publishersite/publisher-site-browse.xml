@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.joinds.web.publishersite.PublisherSiteBrowse"
+        focusComponent="publisherSitesTable"
+        lookupComponent="publisherSitesTable"
+        messagesPack="com.company.joinds.web.publishersite">
+    <dsContext>
+        <groupDatasource id="publisherSitesDs"
+                         class="com.company.joinds.entity.PublisherSite"
+                         view="_local">
+            <query>
+                <![CDATA[select e from joinds$PublisherSite e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="publisherSitesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="publisherSitesTable"
+                datasource="publisherSitesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="publisherSitesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="siteName"/>
+                <column id="countryCode"/>
+            </columns>
+            <rows datasource="publisherSitesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="publisherSitesTable.create"/>
+                <button id="editBtn"
+                        action="publisherSitesTable.edit"/>
+                <button id="removeBtn"
+                        action="publisherSitesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
